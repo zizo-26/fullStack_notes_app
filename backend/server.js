@@ -1,6 +1,14 @@
 // this is the main file of the backend server , which is responsible for handling the requests and responses from the client side.
 const express = require("express");
 const notesRouter = require("./routes/routes");
+const mongoose = require("mongoose");
+// trying anthoer method exporting and importing
+const { connecteDB } = require("./config/db");
+const dotenv = require("dotenv");
+dotenv.config();
+
+console.log(process.env.MONGO_URI);
+
 
 const app = express();
 
@@ -9,7 +17,11 @@ const app = express();
 app.use("/api/notes", notesRouter);
 app.use(express.json());
 
+connecteDB();
+
+// ! this is the server port , listening to the port 5000
+app.listen(5000, () => console.log("server is listing in port 5000"));
 
 
-// ! this is the server port , listening to the port 3000
-app.listen(3000, () => console.log("server is listing in port 3000"));
+
+// * we come to it later : mongodb+srv://bonazizo17_db_user:IXw8wkWmrub43YMs@cluster0.xzhzj3w.mongodb.net/?appName=Cluster0
