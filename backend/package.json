@@ -1,0 +1,16 @@
+{
+  "name": "pakege",
+  "version": "1.0.0",
+  "description": "this pakge for mern notes projct",
+  "license": "ISC",
+  "author": "azizo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.1.14"
+  }
+}
