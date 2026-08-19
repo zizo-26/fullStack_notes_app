@@ -23,5 +23,3 @@ connecteDB();
 app.listen(5000, () => console.log("server is listing in port 5000"));
 
 
-
-// * we come to it later : mongodb+srv://bonazizo17_db_user:IXw8wkWmrub43YMs@cluster0.xzhzj3w.mongodb.net/?appName=Cluster0
