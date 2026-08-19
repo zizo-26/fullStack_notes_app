@@ -7,9 +7,6 @@ const { connecteDB } = require("./config/db");
 const dotenv = require("dotenv");
 dotenv.config();
 
-// console.log(process.env.MONGO_URI);
-
-
 const app = express();
 
 // ? this is the middleware for parsing the json data ,
