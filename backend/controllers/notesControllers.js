@@ -1,7 +1,14 @@
 const express = require("express");
+const {Note}=require('../modules/Note');
 
-function getNotes(req, res) {
-  res.status(200).send("you have 20 notes");
+async function  getAllNotes(req, res) {
+  try {
+     const notes=await Note.find();
+    res.status(200).json(notes);
+  } catch (error) {
+    console.log("error in get all notes controller ", error);
+    res.status(500).json({message:'intenal server error '})
+  }
 }
 
 function createNotes(req, res) {
@@ -17,7 +24,7 @@ function deleteNotes(req, res) {
 }
 
 module.exports = {
-  getNotes,
+  getAllNotes,
   createNotes,
   updateNotes,
   deleteNotes,

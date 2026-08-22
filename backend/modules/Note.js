@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 
 // 1) creat a schema for the notes collection in the database
 
-const Notesschcma=new mongoose.Schema({
-
+const Noteschema=new mongoose.Schema({
     title:{
-        typ:String,
+        type:String,
         required:true
     },
     content:{
@@ -18,6 +17,6 @@ const Notesschcma=new mongoose.Schema({
 
 // 2) create a model for the notes collection in the database
 
-const Notes=mongoose.model('Notes', Notesschcma);
+const Note=mongoose.model('Note', Noteschema);
 
-module.exports=Notes
+module.exports={Note}

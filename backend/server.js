@@ -9,6 +9,9 @@ const { connecteDB } = require("./config/db");
 const dotenv = require("dotenv");
 // call the config method of the dotenv module to load the environment variables from the .env file into process.env
 dotenv.config();
+// calling the port variable from the .env file and storing it in a constant variable
+const Port=process.env.Port
+
 
 
 const app = express();
@@ -21,5 +24,5 @@ app.use(express.json());
 connecteDB();
 
 // ! this is the server port , listening to the port 5000
-app.listen(5000, () => console.log("server is listing in port 5000"));
+app.listen(Port, () => console.log("server is listing in port ",Port));
 
