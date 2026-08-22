@@ -5,8 +5,7 @@ const mongoose = require("mongoose");
 const Notesschcma=new mongoose.Schema({
 
     title:{
-        
-        type:String,
+        typ:String,
         required:true
     },
     content:{

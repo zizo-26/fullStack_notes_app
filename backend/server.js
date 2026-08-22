@@ -2,9 +2,12 @@
 const express = require("express");
 const notesRouter = require("./routes/routes");
 const mongoose = require("mongoose");
-// trying anthoer method exporting and importing
+// concat the path of the database connection file and the config folder
 const { connecteDB } = require("./config/db");
+// dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+// . Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 const dotenv = require("dotenv");
+// call the config method of the dotenv module to load the environment variables from the .env file into process.env
 dotenv.config();
 
 const app = express();
