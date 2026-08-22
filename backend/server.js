@@ -17,11 +17,12 @@ const Port=process.env.Port
 const app = express();
 
 // ? this is the middleware for parsing the json data ,
+connecteDB();
 
-app.use("/api/notes", notesRouter);
 app.use(express.json());
 
-connecteDB();
+
+app.use("/api/notes", notesRouter);
 
 // ! this is the server port , listening to the port 5000
 app.listen(Port, () => console.log("server is listing in port ",Port));
