@@ -27,7 +27,7 @@ async function  getAllNotes(req, res) {
   
   } catch (error) {
     
-    console.log("erro in creat note controller ", error);
+    console.log("erro in create note controller ", error);
     res.status(500).json({message:'internal server  error'})
   }
 }

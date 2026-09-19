@@ -16,10 +16,10 @@ const Port=process.env.Port
 
 const app = express();
 
-// ? this is the middleware for parsing the json data ,
 connecteDB();
 
 
+// ? this is the middleware for parsing the json data ,
 app.use(express.json());
 
 app.use("/api/notes", notesRouter);
