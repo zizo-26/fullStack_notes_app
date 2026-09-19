@@ -19,6 +19,7 @@ async function  getAllNotes(req, res) {
   try {
 
     const {title,content}= req.body
+    console.log(req.body);
     const newNote= new Note({title,content})
 
     await newNote.save()

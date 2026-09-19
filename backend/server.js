@@ -19,8 +19,8 @@ const app = express();
 // ? this is the middleware for parsing the json data ,
 connecteDB();
 
-app.use(express.json());
 
+app.use(express.json());
 
 app.use("/api/notes", notesRouter);
 
