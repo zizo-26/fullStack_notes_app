@@ -27,6 +27,8 @@ async function createNotes(req, res) {
   }
 }
 
+// updating a note in the database and send it to the client side
+
 async function updateNotes(req, res) {
   try {
     const { title, content } = req.body;
@@ -45,6 +47,8 @@ async function updateNotes(req, res) {
     res.status(500).json({ message: "internal server  error" });
   }
 }
+
+// deleting a note in the database and send it to the client side
 
 async function deleteNotes(req, res) {
   try {

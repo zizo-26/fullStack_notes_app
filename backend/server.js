@@ -2,6 +2,7 @@
 const express = require("express");
 const notesRouter = require("./routes/routes");
 const mongoose = require("mongoose");
+const rateLimit = require("./middleware/ratelimit");
 // concat the path of the database connection file and the config folder
 const { connecteDB } = require("./config/db");
 // dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
@@ -16,14 +17,18 @@ const Port=process.env.Port
 
 const app = express();
 
-connecteDB();
 
 
 // ? this is the middleware for parsing the json data ,
 app.use(express.json());
 
+app.use(rateLimit);
+
 app.use("/api/notes", notesRouter);
 
-// ! this is the server port , listening to the port 5000
-app.listen(Port, () => console.log("server is listing in port ",Port));
+connecteDB().then(() => {
+ 
+    // ! this is the server port , listening to the port 5000
+    app.listen(Port, () => console.log("server is listing in port ",Port))
+})
 
