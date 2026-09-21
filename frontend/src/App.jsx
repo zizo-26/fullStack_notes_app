@@ -9,7 +9,11 @@ import toast from "react-hot-toast";
   // testing tailwindcss
   return(<div>
 
-        <button onClick={()=> toast.error('congarts')}  className="btn btn-link"  >click me</button>
+        <button className="btn">Button</button>
+<button className="btn btn-neutral">Neutral</button>
+<button className="btn btn-primary">Primary</button>
+
+        <button onClick={()=> toast.error('congarts')}  className="btn btn-outline bg-orange-700"  >click me</button>
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/create" element={<CreatePage />} />
