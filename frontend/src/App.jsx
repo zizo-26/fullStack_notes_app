@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import Homepage from "./Pages/Homepage";
 import CreatePage from "./Pages/CreatePage";
 import NoteDetailsPage from "./Pages/NoteDetailsPage";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
  function App(){
 

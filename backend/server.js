@@ -3,6 +3,7 @@ const express = require("express");
 const notesRouter = require("./routes/routes");
 const mongoose = require("mongoose");
 const rateLimit = require("./middleware/ratelimit");
+const cors = require("cors");
 // concat the path of the database connection file and the config folder
 const { connecteDB } = require("./config/db");
 // dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
@@ -20,6 +21,10 @@ const app = express();
 
 
 // ? this is the middleware for parsing the json data ,
+app.use(cors({
+
+    origin: "http://localhost:5173", // Replace with your frontend URL
+}));
 app.use(express.json());
 
 app.use(rateLimit);
