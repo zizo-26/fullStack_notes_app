@@ -7,13 +7,7 @@ import toast from "react-hot-toast";
  function App(){
 
   // testing tailwindcss
-  return(<div>
-
-        <button className="btn">Button</button>
-<button className="btn btn-neutral">Neutral</button>
-<button className="btn btn-primary">Primary</button>
-
-        <button onClick={()=> toast.error('congarts')}  className="btn btn-outline bg-orange-700"  >click me</button>
+  return(<div data-theme="forest" >
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/create" element={<CreatePage />} />
